@@ -1,10 +1,10 @@
 // Centralized mock data for the entire CRM
 
 export const VENDORS = [
-  { id: "v1", name: "María Fernández", email: "maria@agusstar.cl", active: true, joinDate: "2025-11-15", lastAccess: "2026-04-03 14:30", avatar: "M" },
-  { id: "v2", name: "Juan Pérez", email: "juan@agusstar.cl", active: true, joinDate: "2026-01-08", lastAccess: "2026-04-03 10:15", avatar: "J" },
-  { id: "v3", name: "Camila Soto", email: "camila@agusstar.cl", active: true, joinDate: "2026-02-20", lastAccess: "2026-04-02 18:45", avatar: "C" },
-  { id: "v4", name: "Diego Muñoz", email: "diego@agusstar.cl", active: false, joinDate: "2025-09-01", lastAccess: "2026-03-15 09:00", avatar: "D" },
+  { id: "v1", name: "María Fernández", email: "maria@seguritochile.cl", active: true, joinDate: "2025-11-15", lastAccess: "2026-04-03 14:30", avatar: "M" },
+  { id: "v2", name: "Juan Pérez", email: "juan@seguritochile.cl", active: true, joinDate: "2026-01-08", lastAccess: "2026-04-03 10:15", avatar: "J" },
+  { id: "v3", name: "Camila Soto", email: "camila@seguritochile.cl", active: true, joinDate: "2026-02-20", lastAccess: "2026-04-02 18:45", avatar: "C" },
+  { id: "v4", name: "Diego Muñoz", email: "diego@seguritochile.cl", active: false, joinDate: "2025-09-01", lastAccess: "2026-03-15 09:00", avatar: "D" },
 ]
 
 export const LEAD_STATES = [
@@ -35,12 +35,12 @@ export const TRAFFIC_SOURCES = [
 ]
 
 export const MOCK_LEADS = [
-  { id: 1, nombre: "María González", telefono: "+56987654321", email: "maria.g@gmail.com", producto: "APV Régimen B", estado: "sin_contactar", fecha: "2026-04-03T10:30:00", vendedorId: "v1", fuente: "facebook", utm_campaign: "apv_abril", monto: null,
-    notas: [
-      { fecha: "2026-04-03T10:30:00", autor: "Sistema", tipo: "sistema", texto: "Lead ingresado desde Facebook (campaña: apv_abril)" }
-    ]
+  { id: 1, nombre: "María González", telefono: "+56987654321", email: "maria.g@gmail.com", producto: "APV Régimen B", estado: "sin_contactar", fecha: "2026-04-03T10:30:00", vendedorId: "v1", fuente: "facebook", utm_campaign: "apv_abril", monto: null, 
+    edad: "30 a 45 años", ingresos: "Más de $2.500.000", ocupacion: "Independiente/Empresario", hijos: "Sí", comuna: "Vitacura",
+    notas: [ { fecha: "2026-04-03T10:30:00", autor: "Sistema", tipo: "sistema", texto: "Lead ingresado desde Facebook (campaña: apv_abril)" } ]
   },
   { id: 2, nombre: "Carlos Muñoz", telefono: "+56912345678", email: "carlos.m@outlook.com", producto: "Seguro Temporal", estado: "interesado", fecha: "2026-04-01T14:00:00", vendedorId: "v1", fuente: "instagram", utm_campaign: "seguros_marzo", monto: null,
+    edad: "30 a 45 años", ingresos: "$1.000.000 - $2.500.000", ocupacion: "Oficina/Administrativo", hijos: "Sí", comuna: "Providencia",
     notas: [
       { fecha: "2026-04-01T14:00:00", autor: "Sistema", tipo: "sistema", texto: "Lead ingresado desde Instagram (campaña: seguros_marzo)" },
       { fecha: "2026-04-01T16:30:00", autor: "María Fernández", tipo: "llamada", texto: "Llamé, interesado en Seguro Temporal 20 años. Pide cotización." },
@@ -48,11 +48,11 @@ export const MOCK_LEADS = [
     ]
   },
   { id: 3, nombre: "Ana Rodríguez", telefono: "+56955551234", email: "ana.r@gmail.com", producto: "Desgravamen Individual", estado: "sin_contactar", fecha: "2026-04-03T08:15:00", vendedorId: "v1", fuente: "facebook", utm_campaign: "desgravamen_q2", monto: null,
-    notas: [
-      { fecha: "2026-04-03T08:15:00", autor: "Sistema", tipo: "sistema", texto: "Lead ingresado desde Facebook (campaña: desgravamen_q2)" }
-    ]
+    edad: "30 a 45 años", ingresos: "Menos de $1.000.000", ocupacion: "Oficina/Administrativo", hijos: "No", comuna: "Ñuñoa",
+    notas: [ { fecha: "2026-04-03T08:15:00", autor: "Sistema", tipo: "sistema", texto: "Lead ingresado desde Facebook (campaña: desgravamen_q2)" } ]
   },
   { id: 4, nombre: "Pedro Soto", telefono: "+56967890123", email: "pedro.s@gmail.com", producto: "APV Régimen A", estado: "cerrado", fecha: "2026-03-25T11:00:00", vendedorId: "v2", fuente: "google", utm_campaign: "apv_search", monto: 85000,
+    edad: "Menor a 30 años", ingresos: "Menos de $1.000.000", ocupacion: "Oficina/Administrativo", hijos: "No", comuna: "Santiago",
     notas: [
       { fecha: "2026-03-25T11:00:00", autor: "Sistema", tipo: "sistema", texto: "Lead ingresado desde Google Ads (campaña: apv_search)" },
       { fecha: "2026-03-25T15:00:00", autor: "Juan Pérez", tipo: "llamada", texto: "Contactado. Muy interesado, ya conoce APV." },
@@ -61,6 +61,7 @@ export const MOCK_LEADS = [
     ]
   },
   { id: 5, nombre: "Francisca López", telefono: "+56934567890", email: "fran.l@gmail.com", producto: "Vida Entera Máxima", estado: "cotizacion", fecha: "2026-03-30T09:00:00", vendedorId: "v2", fuente: "instagram", utm_campaign: "vida_entera", monto: null,
+    edad: "46 a 55 años", ingresos: "Más de $2.500.000", ocupacion: "Independiente/Empresario", hijos: "Sí", comuna: "Las Condes",
     notas: [
       { fecha: "2026-03-30T09:00:00", autor: "Sistema", tipo: "sistema", texto: "Lead ingresado desde Instagram (campaña: vida_entera)" },
       { fecha: "2026-03-30T14:00:00", autor: "Juan Pérez", tipo: "llamada", texto: "Contactada. Quiere protección hereditaria para sus hijos." },
@@ -69,6 +70,7 @@ export const MOCK_LEADS = [
     seguimiento: "2026-04-04T10:00:00"
   },
   { id: 6, nombre: "Roberto Díaz", telefono: "+56923456789", email: "roberto.d@hotmail.com", producto: "Seguro Temporal", estado: "perdido", fecha: "2026-03-20T16:00:00", vendedorId: "v3", fuente: "tiktok", utm_campaign: "tiktok_marzo", monto: null,
+    edad: "Menor a 30 años", ingresos: "Menos de $1.000.000", ocupacion: "Transporte/Maquinaria", hijos: "No", comuna: "Maipú",
     notas: [
       { fecha: "2026-03-20T16:00:00", autor: "Sistema", tipo: "sistema", texto: "Lead ingresado desde TikTok (campaña: tiktok_marzo)" },
       { fecha: "2026-03-21T10:00:00", autor: "Camila Soto", tipo: "llamada", texto: "Llamé, no contestó." },
@@ -77,11 +79,11 @@ export const MOCK_LEADS = [
     ]
   },
   { id: 7, nombre: "Valentina Herrera", telefono: "+56989012345", email: "vale.h@gmail.com", producto: "APV Régimen B", estado: "sin_contactar", fecha: "2026-04-03T14:00:00", vendedorId: "v3", fuente: "facebook", utm_campaign: "apv_abril", monto: null,
-    notas: [
-      { fecha: "2026-04-03T14:00:00", autor: "Sistema", tipo: "sistema", texto: "Lead ingresado desde Facebook (campaña: apv_abril)" }
-    ]
+    edad: "Menor a 30 años", ingresos: "$1.000.000 - $2.500.000", ocupacion: "Oficina/Administrativo", hijos: "No", comuna: "Ñuñoa",
+    notas: [ { fecha: "2026-04-03T14:00:00", autor: "Sistema", tipo: "sistema", texto: "Lead ingresado desde Facebook (campaña: apv_abril)" } ]
   },
   { id: 8, nombre: "Ignacio Fuentes", telefono: "+56978901234", email: "nacho.f@gmail.com", producto: "Desgravamen Individual", estado: "negociacion", fecha: "2026-03-28T09:00:00", vendedorId: "v1", fuente: "referido", utm_campaign: null, monto: null,
+    edad: "30 a 45 años", ingresos: "$1.000.000 - $2.500.000", ocupacion: "Mineria", hijos: "Sí", comuna: "Antofagasta",
     notas: [
       { fecha: "2026-03-28T09:00:00", autor: "Sistema", tipo: "sistema", texto: "Lead ingresado por Referido Directo" },
       { fecha: "2026-03-28T15:00:00", autor: "María Fernández", tipo: "llamada", texto: "Contactado. Tiene crédito hipotecario en BCI, paga $45.000/mes de desgravamen." },
@@ -91,6 +93,7 @@ export const MOCK_LEADS = [
     seguimiento: "2026-04-04T14:00:00"
   },
   { id: 9, nombre: "Sofía Araya", telefono: "+56945678901", email: "sofia.a@gmail.com", producto: "APV Régimen B", estado: "cerrado", fecha: "2026-03-18T10:00:00", vendedorId: "v1", fuente: "google", utm_campaign: "apv_search", monto: 150000,
+    edad: "30 a 45 años", ingresos: "Más de $2.500.000", ocupacion: "Salud/Educacion", hijos: "No", comuna: "Providencia",
     notas: [
       { fecha: "2026-03-18T10:00:00", autor: "Sistema", tipo: "sistema", texto: "Lead ingresado desde Google Ads" },
       { fecha: "2026-03-18T16:00:00", autor: "María Fernández", tipo: "llamada", texto: "Contactada. Renta alta, ideal para Régimen B." },
@@ -99,6 +102,7 @@ export const MOCK_LEADS = [
     ]
   },
   { id: 10, nombre: "Martín Reyes", telefono: "+56956789012", email: "martin.r@gmail.com", producto: "Vida Entera Máxima", estado: "contactado", fecha: "2026-04-02T11:00:00", vendedorId: "v3", fuente: "instagram", utm_campaign: "vida_entera", monto: null,
+    edad: "Mayor a 55 años", ingresos: "$1.000.000 - $2.500.000", ocupacion: "FFAA/Seguridad", hijos: "Sí", comuna: "Valparaíso",
     notas: [
       { fecha: "2026-04-02T11:00:00", autor: "Sistema", tipo: "sistema", texto: "Lead ingresado desde Instagram (campaña: vida_entera)" },
       { fecha: "2026-04-02T16:00:00", autor: "Camila Soto", tipo: "llamada", texto: "Llamé, interesado pero quiere pensarlo. Seguimiento lunes." }

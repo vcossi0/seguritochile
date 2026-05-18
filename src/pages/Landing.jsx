@@ -5,6 +5,7 @@ import ServicesSection from "../components/landing/ServicesSection"
 import FAQSection from "../components/landing/FAQSection"
 import GovernanceSection from "../components/landing/GovernanceSection"
 import CTASection from "../components/landing/CTASection"
+import WhatsAppFloat from "../components/landing/WhatsAppFloat"
 import Footer from "../components/Footer"
 
 export default function Landing() {
@@ -20,6 +21,7 @@ export default function Landing() {
         <CTASection />
       </main>
       <Footer />
+      <WhatsAppFloat />
     </div>
   )
 }

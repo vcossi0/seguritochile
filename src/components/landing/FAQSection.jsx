@@ -63,13 +63,18 @@ export default function FAQSection() {
   }
 
   return (
-    <section id="faq" className="py-24 px-4 bg-card">
-      <div className="container mx-auto max-w-3xl">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-5xl font-serif mb-6 text-foreground">
+    <section id="faq" className="py-16 sm:py-24 px-4 sm:px-6 bg-white relative overflow-hidden">
+      {/* Botanical background pattern */}
+      <div className="absolute inset-0 pointer-events-none opacity-[0.06]">
+        <img src="/botanical-bg.png" alt="" className="w-full h-full object-cover" aria-hidden="true" />
+      </div>
+
+      <div className="container mx-auto max-w-3xl relative z-10">
+        <div className="text-center mb-10 sm:mb-16">
+          <h2 className="text-2xl sm:text-3xl md:text-5xl font-serif mb-4 sm:mb-6 text-foreground">
             FAQ <span className="text-primary italic">Técnica</span>
           </h2>
-          <p className="text-muted-foreground text-lg leading-relaxed">
+          <p className="text-muted-foreground text-sm sm:text-lg leading-relaxed max-w-xl mx-auto">
             Respuestas claras a las consultas más frecuentes sobre nuestros instrumentos de protección y ahorro.
           </p>
         </div>

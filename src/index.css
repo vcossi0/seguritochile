@@ -6,19 +6,19 @@
 
 @layer base {
   :root {
-    --background: 154 28% 6%; /* natural dark green-black */
-    --foreground: 0 0% 98%;
+    --background: 38 40% 96%; /* Warm Linen/Cream */
+    --foreground: 222 12% 18%; /* Soft Charcoal */
     
-    --card: 154 24% 9%;
-    --card-foreground: 0 0% 98%;
+    --card: 0 0% 100%; /* Pure White */
+    --card-foreground: 222 12% 18%;
     
-    --primary: 155 65% 42%; /* vibrant emerald */
+    --primary: 103 14% 48%; /* Sophisticated Sage Green */
     --primary-foreground: 0 0% 100%;
     
-    --muted: 154 20% 15%;
-    --muted-foreground: 154 10% 70%;
+    --muted: 38 20% 90%;
+    --muted-foreground: 222 10% 45%;
     
-    --border: 154 24% 15%;
+    --border: 103 20% 85%; /* Soft Sage border */
   }
 }
 
@@ -35,5 +35,5 @@
 }
 
 .glass-panel {
-  @apply bg-card/60 backdrop-blur-xl border border-border;
+  @apply bg-white/80 backdrop-blur-md border border-border shadow-sm;
 }

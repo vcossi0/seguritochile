@@ -25,7 +25,7 @@ export default function Login() {
     setTimeout(() => {
       if (email && password.length >= 4) {
         const vendorId = role === "vendedor" ? "v1" : undefined
-        localStorage.setItem("agus_auth", JSON.stringify({ 
+        localStorage.setItem("segurito_auth", JSON.stringify({ 
           email, 
           role, 
           vendorId,
@@ -56,7 +56,7 @@ export default function Login() {
       >
         <div className="flex items-center justify-center gap-3 mb-10">
           <Shield className="h-8 w-8 text-primary" />
-          <span className="font-serif text-3xl font-semibold tracking-tight">Agus Star</span>
+          <span className="font-serif text-3xl font-semibold tracking-tight">Segurito Chile</span>
         </div>
 
         <div className="glass-panel p-8 shadow-2xl">
@@ -97,7 +97,7 @@ export default function Login() {
                 <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
                 <input
                   type="email" value={email} onChange={(e) => setEmail(e.target.value)}
-                  placeholder="nombre@agusstar.cl"
+                  placeholder="nombre@seguritochile.cl"
                   className="w-full bg-background border border-border/60 pl-10 pr-4 py-3 text-sm text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:border-primary/60 transition-colors rounded-sm"
                   required
                 />

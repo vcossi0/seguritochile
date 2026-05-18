@@ -32,7 +32,7 @@ export default function AllLeads() {
     const blob = new Blob([headers + rows], { type: "text/csv" })
     const url = URL.createObjectURL(blob)
     const a = document.createElement("a")
-    a.href = url; a.download = `leads_agusstar_${new Date().toISOString().slice(0, 10)}.csv`; a.click()
+    a.href = url; a.download = `leads_seguritochile_${new Date().toISOString().slice(0, 10)}.csv`; a.click()
   }
 
   return (

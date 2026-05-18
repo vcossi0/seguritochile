@@ -3,7 +3,7 @@ import { useMemo } from "react"
 export default function useAuth() {
   const data = useMemo(() => {
     try {
-      return JSON.parse(localStorage.getItem("agus_auth") || "null")
+      return JSON.parse(localStorage.getItem("segurito_auth") || "null")
     } catch { return null }
   }, [])
 
@@ -18,8 +18,8 @@ export default function useAuth() {
     isAdminOrGestor: role === "admin" || role === "gestor",
     isAuthenticated: !!data,
     logout: () => {
-      localStorage.removeItem("agus_auth")
-      window.location.href = "/login"
+      localStorage.removeItem("segurito_auth")
+      window.location.href = "/"
     }
   }
 }

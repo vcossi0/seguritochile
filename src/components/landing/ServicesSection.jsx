@@ -187,18 +187,18 @@ export default function ServicesSection() {
 
   return (
     <>
-      <section id="servicios" className="py-24 px-4 bg-background">
+      <section id="servicios" className="py-16 sm:py-24 px-4 sm:px-6 bg-background">
         <div className="container mx-auto">
-          <div className="mb-16 md:w-2/3">
-            <h2 className="text-3xl md:text-5xl font-serif mb-6 text-foreground">
+          <div className="mb-10 sm:mb-16 md:w-2/3">
+            <h2 className="text-2xl sm:text-3xl md:text-5xl font-serif mb-4 sm:mb-6 text-foreground">
               Ecosistema de <span className="text-primary italic">Protección</span>
             </h2>
-            <p className="text-muted-foreground text-lg leading-relaxed">
+            <p className="text-muted-foreground text-sm sm:text-lg leading-relaxed">
               Módulo de validación técnica para la asignación estratégica de instrumentos de protección bajo normativa CMF y respaldo de Augustar Seguros.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-8">
             {services.map((service, index) => (
               <motion.div
                 key={index}
@@ -206,18 +206,18 @@ export default function ServicesSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="glass-panel p-8 group hover:border-primary/50 transition-colors cursor-pointer"
+                className="bg-white p-5 sm:p-8 group hover:border-primary/50 border border-border/50 shadow-sm transition-all cursor-pointer rounded-sm"
                 onClick={() => setActiveDrawer(index)}
               >
-                <div className="mb-5 bg-card w-16 h-16 flex items-center justify-center rounded-sm border border-border/50 group-hover:bg-primary/5 transition-colors">
+                <div className="mb-4 sm:mb-6 bg-background w-12 h-12 sm:w-16 sm:h-16 flex items-center justify-center rounded-full border border-primary/20 group-hover:bg-primary/5 group-hover:scale-105 transition-all duration-300">
                   {service.icon}
                 </div>
-                <p className="text-xs text-primary font-mono uppercase tracking-widest mb-2">{service.subtitle}</p>
-                <h3 className="text-xl font-serif font-medium mb-3 text-foreground">{service.title}</h3>
-                <p className="text-muted-foreground leading-relaxed text-sm mb-5">
+                <p className="text-[10px] sm:text-xs text-primary font-semibold uppercase tracking-widest mb-1 sm:mb-2">{service.subtitle}</p>
+                <h3 className="text-lg sm:text-xl font-serif font-medium mb-2 sm:mb-3 text-foreground">{service.title}</h3>
+                <p className="text-muted-foreground leading-relaxed text-xs sm:text-sm mb-4 sm:mb-5">
                   {service.shortDescription}
                 </p>
-                <span className="inline-flex items-center gap-2 text-sm text-primary font-medium group-hover:gap-3 transition-all">
+                <span className="inline-flex items-center gap-2 text-xs sm:text-sm text-primary font-semibold group-hover:gap-3 transition-all">
                   Análisis Técnico <ChevronRight className="w-4 h-4" />
                 </span>
               </motion.div>

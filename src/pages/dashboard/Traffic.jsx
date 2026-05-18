@@ -1,9 +1,25 @@
+import { useState, useEffect } from "react"
 import { motion } from "framer-motion"
-import { Globe, Award, TrendingDown, DollarSign } from "lucide-react"
+import { Globe, Award, TrendingDown, DollarSign, Settings, Save, CheckCircle2 } from "lucide-react"
 import KPICard from "../../components/dashboard/KPICard"
 import { TRAFFIC_SOURCES, TRAFFIC_DATA } from "../../data/mockData"
 
 export default function Traffic() {
+  const [pixelId, setPixelId] = useState("")
+  const [isSaved, setIsSaved] = useState(false)
+
+  useEffect(() => {
+    const saved = localStorage.getItem("meta_pixel_id")
+    if (saved) setPixelId(saved)
+  }, [])
+
+  const handleSavePixel = () => {
+    localStorage.setItem("meta_pixel_id", pixelId)
+    setIsSaved(true)
+    setTimeout(() => setIsSaved(false), 2000)
+    window.dispatchEvent(new Event("storage")) // Triggers our App listener if needed
+  }
+
   const sourceEntries = Object.entries(TRAFFIC_DATA)
   const totalVisits = sourceEntries.reduce((a, [, d]) => a + d.visitas, 0)
   const totalLeads = sourceEntries.reduce((a, [, d]) => a + d.leads, 0)
@@ -19,6 +35,35 @@ export default function Traffic() {
 
   return (
     <div className="space-y-6">
+      {/* Meta Pixel Config */}
+      <div className="glass-panel p-6 flex flex-col md:flex-row items-center justify-between gap-4 border-primary/20 bg-primary/5">
+        <div className="flex items-center gap-4">
+          <div className="w-12 h-12 rounded-sm bg-primary/20 flex items-center justify-center text-primary shrink-0">
+            <Settings className="w-6 h-6" />
+          </div>
+          <div>
+            <h3 className="font-serif text-lg text-foreground">Integración Meta Ads (Facebook Píxel)</h3>
+            <p className="text-sm text-muted-foreground">Configura tu ID de píxel para rastrear visitas y leads de forma automática.</p>
+          </div>
+        </div>
+        <div className="flex items-center gap-2 w-full md:w-auto">
+          <input 
+            type="text" 
+            placeholder="Ej: 123456789012345" 
+            value={pixelId}
+            onChange={(e) => setPixelId(e.target.value)}
+            className="flex-1 md:w-64 bg-background border border-border/60 px-4 py-2.5 text-sm text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:border-primary/60 transition-colors rounded-sm"
+          />
+          <button 
+            onClick={handleSavePixel}
+            className="bg-primary text-primary-foreground px-4 py-2.5 rounded-sm font-medium flex items-center justify-center gap-2 hover:bg-primary/90 transition-all shrink-0"
+          >
+            {isSaved ? <CheckCircle2 className="w-4 h-4" /> : <Save className="w-4 h-4" />}
+            {isSaved ? "Guardado" : "Guardar"}
+          </button>
+        </div>
+      </div>
+
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
         <KPICard icon={<Globe className="w-5 h-5 text-primary" />} label="Visitas Totales (Mes)" value={totalVisits.toLocaleString()} trend={18} trendLabel="vs. mes anterior" />
         <KPICard icon={<Award className="w-5 h-5 text-primary" />} label="Mejor Fuente" value={bestSource?.label || "—"} />
