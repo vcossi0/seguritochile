@@ -24,3 +24,7 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+.vercel
+
+# Tooling artifacts (knowledge graph)
+graphify-out/
